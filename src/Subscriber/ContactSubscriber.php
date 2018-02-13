@@ -21,28 +21,5 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class ContactSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var ContactMailer
-    */
-    private $mailer;
-
-    public function __construct(ContactMailer $mailer)
-    {
-        $this->mailer = $mailer;
-    }
-
-    public function onContactFormSubmitted(ContactEvent $event)
-    {
-        $this->mailer->send($event->getContact());
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getSubscribedEvents()
-    {
-        return [
-            Events::CONTACT_FORM_SUBMITTED => 'onContactFormSubmitted',
-        ];
-    }
+    //@TODO
 }

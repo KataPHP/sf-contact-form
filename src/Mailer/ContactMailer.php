@@ -40,14 +40,6 @@ class ContactMailer
 
     public function send(Contact $contact): bool
     {
-        $body = $this->twig->render('mail/contact.html.twig', ['contact' => $contact]);
-
-        $message = (new \Swift_Message($this->parameters['subject']))
-            ->setFrom($this->parameters['from'])
-            ->setTo($this->parameters['to'])
-            ->setBody($body, 'text/html')
-        ;
-
-        return $this->mailer->send($message);
+        //@TODO
     }
 }
